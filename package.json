@@ -1,0 +1,95 @@
+{
+    "name": "rathena-plus-language-support",
+    "displayName": "rAthena Plas Language Support",
+    "description": "Adds syntax highlighting and code snippets for the rAthena Plus Scripting Language",
+    "publisher": "jj163494",
+    "icon": "rathena-icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jj163494/rathena-plus-language-support"
+    },
+    "author": {
+        "name": "MengTian"
+    },
+    "contributors": [
+        {
+            "name": "JoWei",
+            "url": "https://github.com/JoWei"
+        },
+        {
+            "name": "rAthena Dev Team",
+            "url": "https://github.com/rathena/vsce-rathena-language-support"
+        },
+        {
+            "name": "Jittapan Pleumsumran",
+            "url": "https://github.com/secretdataz/athena-language-support"
+        }
+    ],
+    "license": "MIT",
+    "private": false,
+    "bugs": {
+        "url": "https://github.com/jj163494/rathena-plus-language-support/issues"
+    },
+    "version": "1.1.1",
+    "engines": {
+        "vscode": "^1.73.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "rathena",
+                "aliases": [
+                    "rAthena",
+                    "rathena"
+                ],
+                "extensions": [
+                    ".rascript"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "rathena",
+                "scopeName": "source.rathena",
+                "path": "./syntaxes/rathena.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "rathena",
+                "path": "./snippets/rathena.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./",
+        "test": "mocha"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^16.11.7",
+        "@types/vscode": "^1.73.0",
+        "@typescript-eslint/eslint-plugin": "^5.59.2",
+        "@typescript-eslint/parser": "^5.42.0",
+        "eslint": "^8.39.0",
+        "eslint-config-standard-with-typescript": "^34.0.1",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-n": "^15.7.0",
+        "eslint-plugin-promise": "^6.1.1",
+        "mocha": "^10.2.0",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.0.4"
+    }
+}
